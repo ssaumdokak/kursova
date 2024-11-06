@@ -1,0 +1,59 @@
+{
+  "name": "averlist",
+  "version": "1.0.0",
+  "description": "This site need for watching a anime and management your anime list.",
+  "main": "server/src/main.ts",
+  "scripts": {
+    "start": "concurrently \"npm run server:prod\" \"npm run client:start\"",
+    "dev": "concurrently \"npm run docker && npm run server:dev\" \"npm run client:dev\"",
+    "build": "concurrently \"npm run server:build\" \"npm run client:build\"",
+    "lint": "concurrently \"npm run server:lint\" \"npm run client:lint\"",
+    "install:project": "npm run server:install && npm run client:install",
+    "server:start": "cd server && npm run start",
+    "server:dev": "cd server && npm run start:dev",
+    "server:build": "cd server && npm run build",
+    "server:lint": "cd server && npm run lint",
+    "server:install": "cd server && npm install",
+    "server:prod": "cd server && npm run start:prod",
+    "client:start": "cd client && npm run start",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "client:eslint:fix": "cd client && npm run eslint:fix",
+    "client:stylelint:fix": "cd client && npm run stylelint:fix",
+    "client:lint": "cd client && npm run lint",
+    "client:install": "cd client && npm install",
+    "docker": "docker-compose up -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Averito/Averlist.git"
+  },
+  "keywords": [
+    "Anime",
+    "Next.js",
+    "Nest.js",
+    "Anilibria",
+    "Docker",
+    "TypeScript",
+    "Anilibria",
+    "PostgreSQL",
+    "TypeORM",
+    "@reduxjs/toolkit"
+  ],
+  "author": "Averito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Averito/AnimeList/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "homepage": "https://github.com/Averito/AnimeList#readme",
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3"
+  }
+}
